@@ -1,0 +1,23 @@
+{
+  "name": "lovstudio-xbti",
+  "owner": {
+    "name": "Lovstudio",
+    "email": "shawninjuly@gmail.com"
+  },
+  "metadata": {
+    "description": "Lovstudio xBTI skills — `npx skills add lovstudio/xbti-skills`."
+  },
+  "plugins": [
+    {
+      "name": "xbti",
+      "source": "./",
+      "description": "xBTI — 2 free skills bundled together.",
+      "category": "xBTI",
+      "skills": [
+        "./skills/xbti-creator",
+        "./skills/xbti-gallery"
+      ],
+      "strict": false
+    }
+  ]
+}
