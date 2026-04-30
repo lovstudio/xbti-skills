@@ -1,5 +1,5 @@
 ---
-name: lovstudio:xbti-creator
+name: lovstudio-xbti-creator
 category: xBTI
 tagline: "Create custom BTI personality tests (LBTI, FBTI, etc.) with AI-generated content + avatars."
 description: >

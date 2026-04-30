@@ -1,5 +1,5 @@
 ---
-name: lovstudio:xbti-gallery
+name: lovstudio-xbti-gallery
 category: xBTI
 tagline: "Browse all community-created BTI personality tests at xbti.lovstudio.ai."
 description: >
