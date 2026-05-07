@@ -15,7 +15,7 @@ compatibility: >
   Avatar generation requires lovstudio:image-creator skill and ZENMUX_API_KEY.
 metadata:
   author: lovstudio
-  version: "1.0.0"
+  version: "1.0.1"
   tags: bti personality-test generator xbti
 ---
 
@@ -60,7 +60,7 @@ command -v pnpm && echo "USE_PM=pnpm" || command -v bun && echo "USE_PM=bun" || 
 git --version
 
 # 4. image-creator skill
-ls ~/.claude/skills/lovstudio-image-creator/gen_image.py 2>/dev/null && echo "OK" || echo "MISSING"
+npx lovstudio skills add image-creator -g -y
 
 # 5. Zenmux API key
 [ -n "$ZENMUX_API_KEY" ] && echo "OK" || echo "MISSING"
@@ -73,7 +73,7 @@ python3 -c "import google.genai; from PIL import Image" 2>/dev/null && echo "OK"
 
 - `lovstudio:image-creator` missing →
   ```bash
-  npx skills add lovstudio/skills --skill lovstudio:image-creator
+  npx lovstudio skills add image-creator -g -y
   ```
 - Python deps missing →
   ```bash
@@ -198,7 +198,8 @@ Examples:
 2. Ask user: "先生成一个预览确认风格，还是直接批量生成全部？"
 3. **Preview mode**: Generate one image, show result, iterate on prompt style if needed:
    ```bash
-   python3 ~/.claude/skills/lovstudio-image-creator/gen_image.py \
+   IMAGE_CREATOR_DIR="${LOVSTUDIO_IMAGE_CREATOR_DIR:?set LOVSTUDIO_IMAGE_CREATOR_DIR}"
+   python3 "$IMAGE_CREATOR_DIR/gen_image.py" \
      "PROMPT_HERE" \
      -o {TARGET_DIR}/image/{CODE}.png \
      -q medium --no-open
@@ -206,7 +207,8 @@ Examples:
 4. **Batch mode**: Once style confirmed, loop through all types:
    ```bash
    # For each personality type:
-   python3 ~/.claude/skills/lovstudio-image-creator/gen_image.py \
+   IMAGE_CREATOR_DIR="${LOVSTUDIO_IMAGE_CREATOR_DIR:?set LOVSTUDIO_IMAGE_CREATOR_DIR}"
+   python3 "$IMAGE_CREATOR_DIR/gen_image.py" \
      "PROMPT_FOR_TYPE" \
      -o {TARGET_DIR}/image/{CODE}.png \
      -q medium --no-open
@@ -317,6 +319,13 @@ rm -rf /tmp/XBTI
 ## Reference Files
 
 - `references/xbti-data-format.md` — exact data structure format for all files
+
+## User Configuration
+
+Set `LOVSTUDIO_IMAGE_CREATOR_DIR` to the installed `lovstudio-image-creator`
+skill directory when invoking its `gen_image.py` script directly. If the runtime
+can invoke the image-creator skill natively, prefer that path instead of a file
+path.
 
 ## Design Principles
 

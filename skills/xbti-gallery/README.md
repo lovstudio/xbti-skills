@@ -1,5 +1,7 @@
 # lovstudio:xbti-gallery
 
+![Version](https://img.shields.io/badge/version-1.0.2-CC785C)
+
 Browse all community-created BTI personality tests at [xbti.lovstudio.ai](https://xbti.lovstudio.ai).
 
 Part of [lovstudio/skills](https://github.com/lovstudio/skills) — by [lovstudio.ai](https://lovstudio.ai)
@@ -7,7 +9,7 @@ Part of [lovstudio/skills](https://github.com/lovstudio/skills) — by [lovstudi
 ## Install
 
 ```bash
-npx skills add lovstudio/skills --skill lovstudio:xbti-gallery
+npx lovstudio skills add xbti-gallery -g -y
 ```
 
 Requires: `gh` CLI

@@ -11,7 +11,7 @@ license: MIT
 compatibility: Requires `gh` CLI for listing cases.
 metadata:
   author: lovstudio
-  version: "1.0.0"
+  version: "1.0.2"
   tags: bti personality-test gallery xbti
 ---
 
@@ -28,6 +28,10 @@ Open the XBTI Gallery and list all community-created BTI personality tests.
 ## Workflow
 
 ### Step 1: Open Gallery
+
+If the user did not specify whether to open the web gallery or list repository
+cases, use `AskUserQuestion` to choose the mode. If they explicitly asked to
+open or list, proceed directly.
 
 ```bash
 open https://xbti.lovstudio.ai
