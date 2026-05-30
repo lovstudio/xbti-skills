@@ -5,14 +5,14 @@ tagline: "Create custom BTI personality tests (LBTI, FBTI, etc.) with AI-generat
 description: >
   Create a complete custom BTI personality test (like LBTI, FBTI, etc.) based on the XBTI architecture.
   User provides a theme name and preferences, AI generates all content: dimensions, questions,
-  personality types, descriptions, and avatar images via lovstudio:image-creator.
+  personality types, descriptions, and avatar images via lovstudio-image-creator.
   Trigger when user says "创建BTI", "自定义人格测试", "make a BTI", "custom personality test",
   "XBTI变体", "xbti-creator", or mentions creating something like LBTI/FBTI/etc.
 allowed-tools: [Bash, Read, Write, Edit, Glob, Grep, AskUserQuestion]
 license: MIT
 compatibility: >
   Requires Node.js 18+ and a package manager (pnpm/npm/bun).
-  Avatar generation requires lovstudio:image-creator skill and ZENMUX_API_KEY.
+  Avatar generation requires lovstudio-image-creator skill and ZENMUX_API_KEY.
 metadata:
   author: lovstudio
   version: "1.0.1"
@@ -71,7 +71,7 @@ python3 -c "import google.genai; from PIL import Image" 2>/dev/null && echo "OK"
 
 **Auto-fix (no user interaction needed for these):**
 
-- `lovstudio:image-creator` missing →
+- `lovstudio-image-creator` missing →
   ```bash
   npx lovstudio skills add image-creator -g -y
   ```
@@ -174,7 +174,7 @@ Update branding in:
 
 ### Step 7: Generate Avatar Images
 
-For each personality type, programmatically generate an avatar image using the `lovstudio:image-creator` skill.
+For each personality type, programmatically generate an avatar image using the `lovstudio-image-creator` skill.
 
 **Prompt Crafting (nano-banana-pro style):**
 

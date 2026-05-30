@@ -1,4 +1,6 @@
-# lovstudio:xbti-gallery
+# lovstudio-xbti-gallery
+
+![Version](https://img.shields.io/badge/version-1.0.2-CC785C)
 
 ![Version](https://img.shields.io/badge/version-1.0.2-CC785C)
 
@@ -41,7 +43,7 @@ Show me available BTI tests
 
 ## Related
 
-- [lovstudio:xbti-creator](../lovstudio-xbti-creator/) — Create your own BTI personality test
+- [lovstudio-xbti-creator](../lovstudio-xbti-creator/) — Create your own BTI personality test
 
 ## License
 
