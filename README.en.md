@@ -1,8 +1,8 @@
-<h1 align="center">Lovstudio xBTI Skills</h1>
+<h1 align="center">Skill Publisher xBTI Skills</h1>
 
 <p align="center">
-  <strong>Lovstudio skills for building and browsing xBTI personality tests on Claude Code.</strong><br>
-  <sub>By <a href="https://lovstudio.ai">Lovstudio</a> · <a href="https://xbti.lovstudio.ai">xbti.lovstudio.ai</a></sub>
+  <strong>Skill Publisher skills for building and browsing xBTI personality tests on Claude Code.</strong><br>
+  <sub>By <a href="https://example.com">Skill Publisher</a> · <a href="https://example.com/community">xbti.example.com</a></sub>
 </p>
 
 <p align="center">
@@ -20,11 +20,11 @@
 
 ## What Is This
 
-This repo is the **xBTI sub-index** of the Lovstudio skill catalog — a thematic slice of the main [`lovstudio/skills`](https://github.com/lovstudio/skills) index.
+This repo is the **xBTI sub-index** of the Skill Publisher skill catalog — a thematic slice of the main [`skill-publisher/skills`](https://example.com/skills/skills) index.
 
-Paired with [xbti.lovstudio.ai](https://xbti.lovstudio.ai): from authoring your own BTI variant (LBTI, FBTI, …) to browsing community submissions in the gallery.
+Paired with [xbti.example.com](https://example.com/community): from authoring your own BTI variant (LBTI, FBTI, …) to browsing community submissions in the gallery.
 
-Each skill still lives in its own `github.com/lovstudio/{name}-skill` repo. This repo only maintains the index + mirror.
+Each skill still lives in its own `github.com/skill-publisher/{name}-skill` repo. This repo only maintains the index + mirror.
 
 ## Skills
 
@@ -36,8 +36,8 @@ Each skill still lives in its own `github.com/lovstudio/{name}-skill` repo. This
 | | Skill | Description |
 |---|---|---|
 | **xBTI** | | |
-| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-creator`](https://github.com/lovstudio/xbti-creator-skill) | Build your own BTI-style personality test — questions, results, and avatars generated for you. |
-| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-gallery`](https://github.com/lovstudio/xbti-gallery-skill) | Browse every community-made BTI personality test on xbti.lovstudio.ai. |
+| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-creator`](https://example.com/skills/xbti-creator-skill) | Build your own BTI-style personality test — questions, results, and avatars generated for you. |
+| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-gallery`](https://example.com/skills/xbti-gallery-skill) | Browse every community-made BTI personality test on xbti.example.com. |
 <!-- SKILLS:END -->
 
 <sub>The table above is auto-generated from [`skills.yaml`](skills.yaml) by [`scripts/render-readme.py`](scripts/render-readme.py). Edit `skills.yaml`, not this table.</sub>
@@ -47,20 +47,20 @@ Each skill still lives in its own `github.com/lovstudio/{name}-skill` repo. This
 **Via `npx skills`** (vercel-labs CLI):
 
 ```bash
-npx skills add lovstudio/xbti-skills
+npx skills add skill-publisher/xbti-skills
 ```
 
 **Via Claude Code native marketplace**:
 
 ```
-/plugin marketplace add lovstudio/xbti-skills
-/plugin install xbti@lovstudio-xbti
+/plugin marketplace add skill-publisher/xbti-skills
+/plugin install xbti@sgc-xbti
 ```
 
 ## Related indexes
 
-- [`lovstudio/skills`](https://github.com/lovstudio/skills) — Lovstudio main skill index
-- [`lovstudio/dev-skills`](https://github.com/lovstudio/dev-skills) — developer & meta skills
+- [`skill-publisher/skills`](https://example.com/skills/skills) — Skill Publisher main skill index
+- [`skill-publisher/dev-skills`](https://example.com/skills/dev-skills) — developer & meta skills
 
 ## License
 
@@ -70,5 +70,5 @@ npx skills add lovstudio/xbti-skills
 ---
 
 <p align="center">
-  <sub>Built with <a href="https://claude.com/claude-code">Claude Code</a> · by <a href="https://lovstudio.ai">Lovstudio</a></sub>
+  <sub>Built with <a href="https://claude.com/claude-code">Claude Code</a> · by <a href="https://example.com">Skill Publisher</a></sub>
 </p>

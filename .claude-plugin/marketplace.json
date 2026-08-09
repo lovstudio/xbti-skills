@@ -1,11 +1,11 @@
 {
-  "name": "lovstudio-xbti",
+  "name": "sgc-xbti",
   "owner": {
-    "name": "Lovstudio",
+    "name": "Skill Publisher",
     "email": "shawninjuly@gmail.com"
   },
   "metadata": {
-    "description": "Lovstudio xBTI skills — `npx skills add lovstudio/xbti-skills`."
+    "description": "Skill Publisher xBTI skills — `npx skills add skill-publisher/xbti-skills`."
   },
   "plugins": [
     {

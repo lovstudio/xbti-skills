@@ -1,20 +1,20 @@
 ---
-name: lovstudio-xbti-creator
+name: sgc-xbti-creator
 category: xBTI
 tagline: "Create custom BTI personality tests (LBTI, FBTI, etc.) with AI-generated content + avatars."
 description: >
   Create a complete custom BTI personality test (like LBTI, FBTI, etc.) based on the XBTI architecture.
   User provides a theme name and preferences, AI generates all content: dimensions, questions,
-  personality types, descriptions, and avatar images via lovstudio-image-creator.
+  personality types, descriptions, and avatar images via sgc-image-creator.
   Trigger when user says "创建BTI", "自定义人格测试", "make a BTI", "custom personality test",
   "XBTI变体", "xbti-creator", or mentions creating something like LBTI/FBTI/etc.
 allowed-tools: [Bash, Read, Write, Edit, Glob, Grep, AskUserQuestion]
 license: MIT
 compatibility: >
   Requires Node.js 18+ and a package manager (pnpm/npm/bun).
-  Avatar generation requires lovstudio-image-creator skill and ZENMUX_API_KEY.
+  Avatar generation requires sgc-image-creator skill and ZENMUX_API_KEY.
 metadata:
-  author: lovstudio
+  author: contributors
   version: "1.0.1"
   tags: bti personality-test generator xbti
 ---
@@ -43,7 +43,7 @@ Based on the proven XBTI architecture (React + Vite), with AI-generated content.
 | 人格数量 | 16-25（默认20） | No |
 | 特殊彩蛋人格 | 有/无（默认有） | No |
 | 项目目录 | 默认 ~/projects/{NAME} | No |
-| 提交到 Gallery | 是/否（默认否）— 提交到 xbti.lovstudio.ai 供他人体验 | No |
+| 提交到 Gallery | 是/否（默认否）— 提交到 xbti.example.com 供他人体验 | No |
 
 ### Step 2: Environment Setup
 
@@ -60,7 +60,7 @@ command -v pnpm && echo "USE_PM=pnpm" || command -v bun && echo "USE_PM=bun" || 
 git --version
 
 # 4. image-creator skill
-npx lovstudio skills add image-creator -g -y
+npx skills add image-creator -g -y
 
 # 5. Zenmux API key
 [ -n "$ZENMUX_API_KEY" ] && echo "OK" || echo "MISSING"
@@ -71,9 +71,9 @@ python3 -c "import google.genai; from PIL import Image" 2>/dev/null && echo "OK"
 
 **Auto-fix (no user interaction needed for these):**
 
-- `lovstudio-image-creator` missing →
+- `sgc-image-creator` missing →
   ```bash
-  npx lovstudio skills add image-creator -g -y
+  npx skills add image-creator -g -y
   ```
 - Python deps missing →
   ```bash
@@ -140,7 +140,7 @@ Output: `src/data/types.js`
 Clone the XBTI template from GitHub and clean up:
 
 ```bash
-git clone https://github.com/lovstudio/XBTI.git {TARGET_DIR}
+git clone https://example.com/skills/XBTI.git {TARGET_DIR}
 cd {TARGET_DIR}
 
 # Remove origin-specific files, keep the engine
@@ -174,7 +174,7 @@ Update branding in:
 
 ### Step 7: Generate Avatar Images
 
-For each personality type, programmatically generate an avatar image using the `lovstudio-image-creator` skill.
+For each personality type, programmatically generate an avatar image using the `sgc-image-creator` skill.
 
 **Prompt Crafting (nano-banana-pro style):**
 
@@ -198,7 +198,7 @@ Examples:
 2. Ask user: "先生成一个预览确认风格，还是直接批量生成全部？"
 3. **Preview mode**: Generate one image, show result, iterate on prompt style if needed:
    ```bash
-   IMAGE_CREATOR_DIR="${LOVSTUDIO_IMAGE_CREATOR_DIR:?set LOVSTUDIO_IMAGE_CREATOR_DIR}"
+   IMAGE_CREATOR_DIR="${SKILL_IMAGE_CREATOR_DIR:?set SKILL_IMAGE_CREATOR_DIR}"
    python3 "$IMAGE_CREATOR_DIR/gen_image.py" \
      "PROMPT_HERE" \
      -o {TARGET_DIR}/image/{CODE}.png \
@@ -207,7 +207,7 @@ Examples:
 4. **Batch mode**: Once style confirmed, loop through all types:
    ```bash
    # For each personality type:
-   IMAGE_CREATOR_DIR="${LOVSTUDIO_IMAGE_CREATOR_DIR:?set LOVSTUDIO_IMAGE_CREATOR_DIR}"
+   IMAGE_CREATOR_DIR="${SKILL_IMAGE_CREATOR_DIR:?set SKILL_IMAGE_CREATOR_DIR}"
    python3 "$IMAGE_CREATOR_DIR/gen_image.py" \
      "PROMPT_FOR_TYPE" \
      -o {TARGET_DIR}/image/{CODE}.png \
@@ -241,12 +241,12 @@ Tell the user the dev server URL (usually http://localhost:5173) and invite them
 
 **Skip this step if user chose NOT to submit in Step 1.**
 
-If user chose to submit, create a PR to `lovstudio/XBTI` repo:
+If user chose to submit, create a PR to `skill-publisher/XBTI` repo:
 
 ```bash
 # 1. Fork & clone the XBTI repo
 cd /tmp
-gh repo fork lovstudio/XBTI --clone
+gh repo fork skill-publisher/XBTI --clone
 cd XBTI
 
 # 2. Create case directory (follow existing structure: cases/sbti/, cases/cbti/)
@@ -290,7 +290,7 @@ git add cases/${CASE_NAME} cases/registry.js cases/index.json
 git commit -m "feat: add ${BTI_NAME} case (${THEME})"
 git push origin add-case/${CASE_NAME}
 gh pr create \
-  --repo lovstudio/XBTI \
+  --repo skill-publisher/XBTI \
   --title "feat: add ${BTI_NAME} (${THEME})" \
   --body "$(cat <<'PREOF'
 ## New BTI Case
@@ -300,7 +300,7 @@ gh pr create \
 - **Style**: {STYLE}
 - **Types**: {TYPE_COUNT} personality types
 
-Generated with [xbti-creator](https://github.com/lovstudio/skills)
+Generated with [xbti-creator](https://example.com/skills/skills)
 PREOF
 )"
 ```
@@ -309,7 +309,7 @@ PREOF
 
 **Update `cases/index.json`:** Append `{"id":"{CASE_NAME}","name":"{BTI_NAME}","desc":"{THEME}","author":"...","authorUrl":"..."}` to the array.
 
-Tell user the PR URL and that it will appear on xbti.lovstudio.ai after merge.
+Tell user the PR URL and that it will appear on xbti.example.com after merge.
 
 ```bash
 # Clean up
@@ -322,7 +322,7 @@ rm -rf /tmp/XBTI
 
 ## User Configuration
 
-Set `LOVSTUDIO_IMAGE_CREATOR_DIR` to the installed `lovstudio-image-creator`
+Set `SKILL_IMAGE_CREATOR_DIR` to the installed `sgc-image-creator`
 skill directory when invoking its `gen_image.py` script directly. If the runtime
 can invoke the image-creator skill natively, prefer that path instead of a file
 path.
@@ -334,3 +334,11 @@ path.
 3. **Balance** — personality types should cover the spectrum, no type should feel "objectively better"
 4. **Humor** — even serious themes benefit from wit in the descriptions
 5. **Completeness** — the output should be a fully working, deployable website
+
+## Runtime context (shared)
+
+运行前读取本 Skill 包的 `skill.yaml`，由宿主提供 `skill-runtime/v1` 上下文。字段解析顺序为：当前请求、项目上下文、个人 Preferences、品牌 Profile、通用默认值。
+
+- 只使用 Manifest 声明的字段；Profile 保存公开品牌事实，Preferences 保存个人工作偏好。
+- `required: true` 字段缺失时，按 Manifest 的问题配置向用户提出一个聚焦问题；用户明确同意后再保存回答。
+- 报错提供可复制的 `context_id`、字段路径与来源，诊断内容避开秘密、完整私人路径和原始配置。

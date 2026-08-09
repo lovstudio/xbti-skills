@@ -13,7 +13,7 @@ on:
       - ".github/workflows/render-readme.yml"
   schedule:
     # Nightly: pull fresh descriptions from each skill repo's GitHub description,
-    # and re-mirror every free skill so `npx skills add lovstudio/skills` sees
+    # and re-mirror every free skill so `npx skills add skill-publisher/skills` sees
     # the latest SKILL.md content.
     - cron: "17 3 * * *"
   workflow_dispatch:

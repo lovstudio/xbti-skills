@@ -1,8 +1,8 @@
-<h1 align="center">Lovstudio xBTI Skills</h1>
+<h1 align="center">Skill Publisher xBTI Skills</h1>
 
 <p align="center">
-  <strong>Lovstudio xBTI 人格测试相关的 Claude Code 技能子索引。</strong><br>
-  <sub>由 <a href="https://lovstudio.ai">Lovstudio</a> 出品 · <a href="https://xbti.lovstudio.ai">xbti.lovstudio.ai</a></sub>
+  <strong>Skill Publisher xBTI 人格测试相关的 Claude Code 技能子索引。</strong><br>
+  <sub>由 <a href="https://example.com">Skill Publisher</a> 出品 · <a href="https://example.com/community">xbti.example.com</a></sub>
 </p>
 
 <p align="center">
@@ -20,11 +20,11 @@
 
 ## 这是什么
 
-本仓库是 Lovstudio 技能体系中**围绕 xBTI（BTI 人格测试定制与画廊）**的子索引，是 [`lovstudio/skills`](https://github.com/lovstudio/skills) 主索引的专题分支。
+本仓库是 Skill Publisher 技能体系中**围绕 xBTI（BTI 人格测试定制与画廊）**的子索引，是 [`skill-publisher/skills`](https://example.com/skills/skills) 主索引的专题分支。
 
-配合 [xbti.lovstudio.ai](https://xbti.lovstudio.ai) 使用：从定制自己的 BTI（如 LBTI、FBTI）到在社区画廊里浏览发布作品。
+配合 [xbti.example.com](https://example.com/community) 使用：从定制自己的 BTI（如 LBTI、FBTI）到在社区画廊里浏览发布作品。
 
-每个技能仍然在自己的独立仓库 `github.com/lovstudio/{name}-skill` 里。本仓库只维护索引与镜像。
+每个技能仍然在自己的独立仓库 `github.com/skill-publisher/{name}-skill` 里。本仓库只维护索引与镜像。
 
 ## 技能列表
 
@@ -36,8 +36,8 @@
 | | 技能 | 描述 |
 |---|---|---|
 | **人格测试** | | |
-| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 测试定制 · `xbti-creator`](https://github.com/lovstudio/xbti-creator-skill) | 定制属于你自己的 BTI 人格测试（LBTI、FBTI 等），题目、结果、头像全自动生成。 |
-| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 画廊 · `xbti-gallery`](https://github.com/lovstudio/xbti-gallery-skill) | 浏览社区在 xbti.lovstudio.ai 上发布的所有 BTI 人格测试。 |
+| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 测试定制 · `xbti-creator`](https://example.com/skills/xbti-creator-skill) | 定制属于你自己的 BTI 人格测试（LBTI、FBTI 等），题目、结果、头像全自动生成。 |
+| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 画廊 · `xbti-gallery`](https://example.com/skills/xbti-gallery-skill) | 浏览社区在 xbti.example.com 上发布的所有 BTI 人格测试。 |
 <!-- SKILLS:END -->
 
 <sub>上表由 [`scripts/render-readme.py`](scripts/render-readme.py) 从 [`skills.yaml`](skills.yaml) 自动生成。请编辑 `skills.yaml`，不要手动改表格。</sub>
@@ -47,20 +47,20 @@
 **通过 `npx skills`**（vercel-labs CLI）：
 
 ```bash
-npx skills add lovstudio/xbti-skills
+npx skills add skill-publisher/xbti-skills
 ```
 
 **通过 Claude Code 原生 marketplace**：
 
 ```
-/plugin marketplace add lovstudio/xbti-skills
-/plugin install xbti@lovstudio-xbti
+/plugin marketplace add skill-publisher/xbti-skills
+/plugin install xbti@sgc-xbti
 ```
 
 ## 相关索引
 
-- [`lovstudio/skills`](https://github.com/lovstudio/skills) — Lovstudio 所有技能的主索引
-- [`lovstudio/dev-skills`](https://github.com/lovstudio/dev-skills) — 开发者 & 元技能
+- [`skill-publisher/skills`](https://example.com/skills/skills) — Skill Publisher 所有技能的主索引
+- [`skill-publisher/dev-skills`](https://example.com/skills/dev-skills) — 开发者 & 元技能
 
 ## 许可证
 
@@ -70,5 +70,5 @@ npx skills add lovstudio/xbti-skills
 ---
 
 <p align="center">
-  <sub>使用 <a href="https://claude.com/claude-code">Claude Code</a> 构建 · 由 <a href="https://lovstudio.ai">Lovstudio</a> 出品</sub>
+  <sub>使用 <a href="https://claude.com/claude-code">Claude Code</a> 构建 · 由 <a href="https://example.com">Skill Publisher</a> 出品</sub>
 </p>

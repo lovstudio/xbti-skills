@@ -8,5 +8,5 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versioning: 
 ### Fixed
 
 - standardize install and image-creator configuration
-- replace fixed installed-skill paths with LOVSTUDIO_IMAGE_CREATOR_DIR
+- replace fixed installed-skill paths with SKILL_IMAGE_CREATOR_DIR
 
