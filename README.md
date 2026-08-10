@@ -36,8 +36,8 @@
 | | 技能 | 描述 |
 |---|---|---|
 | **人格测试** | | |
-| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 测试定制 · `xbti-creator`](https://example.com/skills/xbti-creator-skill) | 定制属于你自己的 BTI 人格测试（LBTI、FBTI 等），题目、结果、头像全自动生成。 |
-| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 画廊 · `xbti-gallery`](https://example.com/skills/xbti-gallery-skill) | 浏览社区在 xbti.example.com 上发布的所有 BTI 人格测试。 |
+| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 测试定制 · `xbti-creator`](https://github.com/skill-publisher/xbti-creator-skill) | 定制属于你自己的 BTI 人格测试（LBTI、FBTI 等），题目、结果、头像全自动生成。 |
+| ![Free](https://img.shields.io/badge/Free-green) | [xBTI 画廊 · `xbti-gallery`](https://github.com/skill-publisher/xbti-gallery-skill) | 浏览社区在 xbti.example.com 上发布的所有 BTI 人格测试。 |
 <!-- SKILLS:END -->
 
 <sub>上表由 [`scripts/render-readme.py`](scripts/render-readme.py) 从 [`skills.yaml`](skills.yaml) 自动生成。请编辑 `skills.yaml`，不要手动改表格。</sub>
