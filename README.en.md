@@ -36,8 +36,8 @@ Each skill still lives in its own `github.com/skill-publisher/{name}-skill` repo
 | | Skill | Description |
 |---|---|---|
 | **xBTI** | | |
-| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-creator`](https://example.com/skills/xbti-creator-skill) | Build your own BTI-style personality test — questions, results, and avatars generated for you. |
-| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-gallery`](https://example.com/skills/xbti-gallery-skill) | Browse every community-made BTI personality test on xbti.example.com. |
+| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-creator`](https://github.com/skill-publisher/xbti-creator-skill) | Build your own BTI-style personality test — questions, results, and avatars generated for you. |
+| ![Free](https://img.shields.io/badge/Free-green) | [`xbti-gallery`](https://github.com/skill-publisher/xbti-gallery-skill) | Browse every community-made BTI personality test on xbti.example.com. |
 <!-- SKILLS:END -->
 
 <sub>The table above is auto-generated from [`skills.yaml`](skills.yaml) by [`scripts/render-readme.py`](scripts/render-readme.py). Edit `skills.yaml`, not this table.</sub>
