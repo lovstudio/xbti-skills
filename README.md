@@ -54,7 +54,7 @@ npx skills add skill-publisher/xbti-skills
 
 ```
 /plugin marketplace add skill-publisher/xbti-skills
-/plugin install xbti@sgc-xbti
+/plugin install xbti@lov-xbti
 ```
 
 ## 相关索引

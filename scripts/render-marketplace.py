@@ -37,7 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 YAML_PATH = ROOT / "skills.yaml"
 OUT_PATH = ROOT / ".claude-plugin" / "marketplace.json"
 
-MARKETPLACE_NAME = "sgc-xbti"
+MARKETPLACE_NAME = "lov-xbti"
 OWNER = {"name": "Skill Publisher", "email": "shawninjuly@gmail.com"}
 
 
