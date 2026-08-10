@@ -2,16 +2,14 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.2-CC785C)
 
-![Version](https://img.shields.io/badge/version-1.0.2-CC785C)
+Browse all community-created BTI personality tests at [xbti.lovstudio.ai](https://xbti.lovstudio.ai).
 
-Browse all community-created BTI personality tests at [xbti.example.com](https://example.com/community).
-
-Part of [skill-publisher/skills](https://example.com/skills/skills) — by [example.com](https://example.com)
+Part of [lovstudio/skills](https://github.com/lovstudio/skills) — by [lovstudio.ai](https://lovstudio.ai)
 
 ## Install
 
 ```bash
-npx skills add xbti-gallery -g -y
+npx lovstudio skills add lov-xbti-gallery -g -y
 ```
 
 Requires: `gh` CLI
