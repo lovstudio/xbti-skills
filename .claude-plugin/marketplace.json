@@ -1,11 +1,11 @@
 {
   "name": "lov-xbti",
   "owner": {
-    "name": "Skill Publisher",
+    "name": "Lovstudio.AI",
     "email": "shawninjuly@gmail.com"
   },
   "metadata": {
-    "description": "Skill Publisher xBTI skills — `npx skills add skill-publisher/xbti-skills`."
+    "description": "Lovstudio.AI xBTI skills — `npx skills add lovstudio/xbti-skills`."
   },
   "plugins": [
     {

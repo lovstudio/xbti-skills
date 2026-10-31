@@ -8,9 +8,9 @@ multiselect UI grouped by plugin name. One-skill-per-plugin produces a
 redundant parent-child tree; one-plugin-per-category collapses that into
 a useful tree of categories.
 
-Tradeoff: Claude Code's native `/plugin install <name>@skill-publisher` now
+Tradeoff: Claude Code's native `/plugin install <name>@lovstudio` now
 installs an entire category at a time (e.g. `/plugin install
-dev-tools@skill-publisher` pulls all Dev Tools skills). `npx skills add` is our
+dev-tools@lovstudio` pulls all Dev Tools skills). `npx skills add` is our
 primary install path, so this is the right call.
 
 Each skill's SKILL.md lives at ./skills/<skill-name>/. Plugins point at
@@ -38,7 +38,7 @@ YAML_PATH = ROOT / "skills.yaml"
 OUT_PATH = ROOT / ".claude-plugin" / "marketplace.json"
 
 MARKETPLACE_NAME = "lov-xbti"
-OWNER = {"name": "Skill Publisher", "email": "shawninjuly@gmail.com"}
+OWNER = {"name": "Lovstudio.AI", "email": "shawninjuly@gmail.com"}
 
 
 def load_installable_skills() -> tuple[list[dict], list[dict]]:
@@ -117,7 +117,7 @@ def render() -> dict:
         "name": MARKETPLACE_NAME,
         "owner": OWNER,
         "metadata": {
-            "description": "Skill Publisher xBTI skills — `npx skills add skill-publisher/xbti-skills`.",
+            "description": "Lovstudio.AI xBTI skills — `npx skills add lovstudio/xbti-skills`.",
         },
         "plugins": plugins,
     }
