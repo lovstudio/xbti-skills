@@ -1,68 +1,68 @@
 ---
 name: lov-xbti-gallery
-category: xBTI
-tagline: "Browse all community-created BTI personality tests at xbti.example.com."
-description: >
-  Browse the XBTI Gallery — all community-created BTI personality tests at xbti.example.com.
-  Trigger when user says "XBTI Gallery", "xbti-gallery", "BTI列表", "浏览人格测试",
-  "show BTI cases", or wants to see available BTI variants.
-allowed-tools: [Bash, Read]
 license: MIT
 compatibility: Requires `gh` CLI for listing cases.
+description: 从已核实的社区地址或仓库列出可访问的 XBTI 人格测试案例。支持明确输入与结果回读。Use to browse a gallery of
+  XBTI personality tests.
+depends_on:
+- lov-branding-consistency
 metadata:
   author: contributors
-  version: "1.0.2"
-  tags: bti personality-test gallery xbti
+  version: 1.0.5
+  tags:
+  - bti
+  - personality-test
+  - gallery
+  - xbti
+  content_class: deterministic-output
+  card_standard: lovstudio/skill-card/v1
 ---
 
-# xbti-gallery — Browse Community BTI Tests
+# XBTI 图鉴 · XBTI Gallery
 
-Open the XBTI Gallery and list all community-created BTI personality tests.
+从已核实的社区地址或仓库列出可访问的 XBTI 人格测试案例。
 
-## When to Use
+## Triggers
 
-- User wants to browse existing BTI personality tests
-- User says "打开 XBTI Gallery" or "show me BTI cases"
-- User wants to see what others have created before making their own
+### Activate when
+
+- “从已核实的社区地址或仓库列出可访问的 XBTI 人格测试案例。”
+- “Browse a gallery of XBTI personality tests.”
+
+### Do not activate when
+
+- 只是查询本 Skill 的说明，或请求与上述结果无关的任务；不执行实际业务操作。
+- 用户仅要预览或审查时，不进入修改、提交或发布分支。
+
+## Execution boundary
+
+自然语言请求即可触发；无需旧 slash 路径、参数插值或指定助手。明确解析当前请求中的
+项目、目标文件、选项与输出位置；用当前宿主实际提供的文件、搜索、CLI 和浏览器能力。
+项目依赖版本与外部 API 在执行时核实，不能假设示例是现行配置。随包脚本从 Skill 根解析，
+业务文件从目标项目根解析。先读当前状态，保护已有未提交内容与其他任务的暂存区。
+分析、预览请求保持只读；修改、提交、推送、部署和发布各依当前请求的明确范围执行。
+不绕过保护、自动发送消息、强制结束用户进程或抢前台。失败保留可诊断原始错误。
 
 ## Workflow
 
-### Step 1: Open Gallery
+1. 从用户请求、项目配置或 Profile 获取 gallery URL 或 repository；旧示例域名不当作真实官网。
 
-If the user did not specify whether to open the web gallery or list repository
-cases, use `AskUserQuestion` to choose the mode. If they explicitly asked to
-open or list, proceed directly.
+2. 先验证地址与访问状态。用户要求打开页面时使用可用浏览器入口；只要求列表时保持只读检索。
 
-```bash
-open https://example.com/community
-```
+3. 仓库模式通过已确认 repo 的 cases 目录读取名称与说明，处理分页和路径编码，保留真实 URL。
 
-### Step 2: List Available Cases
+4. 空目录、404、权限不足和解析失败分别说明；不可访问时不能伪报没有案例。
 
-Fetch and display all BTI variants from the repository:
+5. 结果说明测试名称、简介和可用入口；不创建测试、不提交案例，也不将人格测试结果作临床判断。
 
-```bash
-gh api repos/skill-publisher/XBTI/contents/cases 2>/dev/null | python3 -c "
-import json, sys
-try:
-    items = json.load(sys.stdin)
-    if isinstance(items, list):
-        for item in items:
-            if item.get('type') == 'dir':
-                print(f'  - {item[\"name\"]}')
-    else:
-        print('  (no cases yet)')
-except:
-    print('  (unable to fetch)')
-"
-```
+## Composition
 
-If no cases exist, tell the user: "Gallery 还没有案例，用 `/lov-xbti-creator` 创建一个并提交吧！"
+执行前读取 [能力组合](references/skill-composition.md)，按明确制品交接相邻能力。
 
 ## Runtime context (shared)
 
-运行前读取本 Skill 包的 `skill.yaml`，由宿主提供 `skill-runtime/v1` 上下文。字段解析顺序为：当前请求、项目上下文、个人 Preferences、品牌 Profile、通用默认值。
-
-- 只使用 Manifest 声明的字段；Profile 保存公开品牌事实，Preferences 保存个人工作偏好。
-- `required: true` 字段缺失时，按 Manifest 的问题配置向用户提出一个聚焦问题；用户明确同意后再保存回答。
-- 报错提供可复制的 `context_id`、字段路径与来源，诊断内容避开秘密、完整私人路径和原始配置。
+运行前读取本包 `skill.yaml` 与 [Profile 合同](references/user-profile.md)。优先级为当前请求、
+项目上下文、本 Skill records、共享 preferences、brand/user Profile、安全默认值。
+只读取声明字段；没有专用运行时的宿主可使用 `scripts/profile_store.py` 读取共享 Profile。
+配置缺失只问影响结果的一个问题。用户明确要求长期保存的值通过该脚本原子写入，
+报告实际路径；不保存推断、凭据或其他任务的资料。

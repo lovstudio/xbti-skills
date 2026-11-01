@@ -13,13 +13,15 @@ license: MIT
 compatibility: >
   Requires Node.js 18+ and a package manager (pnpm/npm/bun).
   Avatar generation requires lov-image-creator skill and ZENMUX_API_KEY.
+depends_on:
+  - lov-branding-consistency
 metadata:
   author: contributors
-  version: "1.0.1"
+  version: "1.0.2"
   tags: bti personality-test generator xbti
 ---
 
-# xbti-creator — Create Your Own BTI Personality Test
+# XBTI 工坊 · XBTI Studio
 
 Generate a complete, deployable BTI personality test website from a theme and preferences.
 Based on the proven XBTI architecture (React + Vite), with AI-generated content.
